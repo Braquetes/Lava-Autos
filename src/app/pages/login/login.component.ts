@@ -57,6 +57,7 @@ emailPattern(){
         this.CS.set('idUser', data.ID_USUARIO, 1, '/');
         this.CS.set('usuario', data.USUARIO, 1, '/');
         this.CS.set('correo', data.CORREO, 1, '/');
+        this.CS.set('pass', data.CONTRASEÑA, 1, '/');
         this.router.navigate(['/welcome']);
       }
     });

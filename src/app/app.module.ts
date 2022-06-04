@@ -9,6 +9,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeComponent } from './client/welcome/welcome.component';
+import { ServicesComponent } from './client/services/services.component';
+import { HistorialComponent } from './client/historial/historial.component';
+import { PerfilComponent } from './client/perfil/perfil.component';
+import { LoadComponent } from './client/load/load.component';
+import { ServiceComponent } from './client/service/service.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { WelcomeComponent } from './client/welcome/welcome.component';
     HomeComponent,
     LoginComponent,
     RegistroComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    ServicesComponent,
+    HistorialComponent,
+    PerfilComponent,
+    LoadComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { WelcomeComponent } from './client/welcome/welcome.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ServicesComponent } from './client/services/services.component';
+import { HistorialComponent } from './client/historial/historial.component';
+import { PerfilComponent } from './client/perfil/perfil.component';
+import { LoadComponent } from './client/load/load.component';
+import { ServiceComponent } from './client/service/service.component';
 
 const routes: Routes = [
   {
@@ -22,6 +27,31 @@ const routes: Routes = [
   {
     path: 'welcome',
     component: WelcomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'servicios',
+    component: ServicesComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'historial',
+    component: HistorialComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'load',
+    component: LoadComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'servicio',
+    component: ServiceComponent,
     canActivate: [AuthGuard]
   },
   {

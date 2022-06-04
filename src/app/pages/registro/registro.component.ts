@@ -19,13 +19,13 @@ passReq(){
   }
 
 emailReq(){
-  return this.miFormulario.controls['email']?.errors?.['required'] &&
-         this.miFormulario.controls['email']?.touched;
+  return this.miFormulario.controls['correo']?.errors?.['required'] &&
+         this.miFormulario.controls['correo']?.touched;
 }
 
 emailPattern(){
-  return this.miFormulario.controls['email']?.errors?.['pattern'] &&
-         this.miFormulario.controls['email']?.touched;
+  return this.miFormulario.controls['correo']?.errors?.['pattern'] &&
+         this.miFormulario.controls['correo']?.touched;
 }
 
   matchPass(ctrl: FormControl){
@@ -54,6 +54,10 @@ emailPattern(){
       contraseña: '',
       confirmPassword: ''
     });
+
+    if(this.CS.get('access_token')){
+      this.router.navigate(['/welcome']);
+    } 
   }
 
   campoValido(campo: string){
