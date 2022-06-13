@@ -1,0 +1,75 @@
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <h1><a><span>Lava Autos</span></a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" [routerLink]="['/welcome']">Inicio</a></li>
+                <li><a class="nav-link scrollto active" [routerLink]="['/servicios']">Servicios</a></li>
+                <li><a class="nav-link scrollto" [routerLink]="['/historial']">Historial</a></li>
+                <li><a class="nav-link scrollto" [routerLink]="['/perfil']">{{usuario}}</a></li>
+                <!-- <li class="nav-item">
+                    <button class="colorbutton1" [routerLink]="['/login']">Iniciar</button>
+                </li>
+                <li class="nav-item">
+                    <button class="colorbutton2" [routerLink]="['/registro']">Registrarse</button>
+                </li> -->
+            </ul>
+            <a class="btn btn-salir" (click)="salir()"><i class="fas fa-sign-out-alt"></i></a>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<div class="container">
+    <div class="p-5 col-6 offset-3" align="center">
+        <div class="card ">
+            <div class="card-header text-center">
+                <h3 class="fw-bold">Agregar un auto</h3>
+            </div>
+            <div class="card-body">
+                <form autocomplete="off" [formGroup]="miFormulario">
+                    <div class="mb-3 row justify-content-md-center" align="center">
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Modelo:</label>
+                            <input type="text" class="form-control" formControlName="modelo"
+                                placeholder="Ingrese su nombre de usuario">
+                            <span *ngIf="campoValido('modelo')" class="form-text text-danger">
+                                Campo obligatorio</span>
+                            <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
+                        </div>
+                    </div>
+                    <div class="mb-3 row justify-content-md-center" align="center">
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Placa:</label>
+                            <input type="text" class="form-control" formControlName="placa"
+                                placeholder="Ingrese su nombre de usuario">
+                            <span *ngIf="campoValido('placa')" class="form-text text-danger">
+                                Campo obligatorio</span>
+                            <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row text-center">
+                        <div class="col">
+                            <button *ngIf="!id" type="submit" [disabled]="miFormulario.invalid" class="btn  btn-primary btn-lg"
+                                (click)="save()">
+                                Guardar
+                            </button>
+                            <button *ngIf="id" type="submit" [disabled]="miFormulario.invalid" class="btn  btn-primary btn-lg"
+                                (click)="actualizar()">
+                                Actualizar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

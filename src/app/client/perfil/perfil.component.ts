@@ -32,12 +32,12 @@ export class PerfilComponent implements OnInit {
 
   update(form: any){
     console.log(form.value);
-    this.AS.update(this.id,form.value).subscribe((data: any) => {
-      if(data.status === 'User Updated'){
-        console.log(data);
-        this.salir();
-      }
-    });
+    // this.AS.update(this.id,form.value).subscribe((data: any) => {
+    //   if(data.status === 'User Updated'){
+    //     console.log(data);
+    //     this.salir();
+    //   }
+    // });
   }
 
   salir(){

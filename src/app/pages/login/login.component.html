@@ -53,9 +53,9 @@
                         <div class="mb-3 row justify-content-md-center" align="center">
                             <div class="col-12">
                                 <label class="form-label fw-bold">Contraseña:</label>
-                                <input type="password" class="form-control" formControlName="contraseña"
+                                <input type="password" class="form-control" formControlName="password"
                                     placeholder="Ingrese su contraseña">
-                                <span class="form-text text-danger" *ngIf="campoValido('contraseña')">Mínimo 8
+                                <span class="form-text text-danger" *ngIf="campoValido('password')">Mínimo 8
                                     caracteres</span>
                             </div>
                         </div>
@@ -71,6 +71,8 @@
                         <div class="mb-3 row text-center">
                             <div class="col">
                                 Aún no tienes cuenta? <a [routerLink]="['/registro']">Click aquí</a>
+                                <br>
+                                Ingresa como <a [routerLink]="['/loginEmpleado']">Empleado</a>
                             </div>
                         </div>
                     </form>

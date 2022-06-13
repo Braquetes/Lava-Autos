@@ -1,0 +1,80 @@
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <h1><a><span>Lava Autos</span></a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" [routerLink]="['/home']">Inicio</a></li>
+                <li class="nav-item">
+                    <button class="colorbutton1">Iniciar</button>
+                </li>
+                <li class="nav-item">
+                    <button class="colorbutton2" [routerLink]="['/registro']">Registrarse</button>
+                </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+        <div class="p-5 col-6 offset-3" align="center">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3 class="fw-bold">Iniciar sesión</h3>
+                </div>
+                <div class="card-body">
+                    <form autocomplete="off" [formGroup]="miFormulario">
+    
+                        <div class="mb-3 row justify-content-md-center" align="center">
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Email:</label>
+                                <input type="email" class="form-control" formControlName="correo"
+                                    placeholder="Ingrese su correo electronico" [pattern]="emailCheck">
+                                <div>
+                                    <span *ngIf="emailReq()" class="form-text text-danger">
+                                        Dirección de correo no válida</span>
+                                </div>
+                                <span *ngIf="emailPattern()" class="form-text text-danger">
+                                    Patrón incorrecto</span>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3 row justify-content-md-center" align="center">
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Contraseña:</label>
+                                <input type="password" class="form-control" formControlName="password"
+                                    placeholder="Ingrese su contraseña">
+                                <span class="form-text text-danger" *ngIf="campoValido('password')">Mínimo 8
+                                    caracteres</span>
+                            </div>
+                        </div>
+    
+                        <div class="mb-3 row text-center">
+                            <div class="col">
+                                <button type="submit" [disabled]="miFormulario.invalid" class="btn  btn-primary btn-lg"
+                                    (click)="save()">
+                                    Iniciar sesión
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+
+

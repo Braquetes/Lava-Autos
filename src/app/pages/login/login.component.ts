@@ -25,7 +25,7 @@ emailPattern(){
 
   miFormulario: FormGroup = this.fb.group({
     correo: ['',[Validators.required]],
-    contraseña: ['',[Validators.required, Validators.minLength(8)]]
+    password: ['',[Validators.required, Validators.minLength(8)]]
   });
 
   constructor(private fb: FormBuilder, private CS: CookieService, private router: Router, private AS: AuthService) { }
@@ -34,7 +34,7 @@ emailPattern(){
 
     this.miFormulario.setValue({
       correo: '',
-      contraseña: '',
+      password: '',
     });
 
     if(this.CS.get('access_token')){
@@ -52,12 +52,12 @@ emailPattern(){
     console.log(this.miFormulario.value);
     this.AS.login(this.miFormulario.value).subscribe((data: any) =>{
       console.log(data);
-      if(data.status != 'user not found'){
-        this.CS.set('access_token', 'token-prueba', 1, '/');
-        this.CS.set('idUser', data.ID_USUARIO, 1, '/');
-        this.CS.set('usuario', data.USUARIO, 1, '/');
-        this.CS.set('correo', data.CORREO, 1, '/');
-        this.CS.set('pass', data.CONTRASEÑA, 1, '/');
+      if(data.resultado == 'Conectado'){
+        this.CS.set('access_token', data.token, 1, '/');
+        this.CS.set('idUser', data.idCliente, 1, '/');
+        this.CS.set('usuario', data.nombre, 1, '/');
+        this.CS.set('correo', data.correo, 1, '/');
+        this.CS.set('pass', data.password, 1, '/');
         this.router.navigate(['/welcome']);
       }
     });

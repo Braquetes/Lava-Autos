@@ -14,6 +14,9 @@ import { HistorialComponent } from './client/historial/historial.component';
 import { PerfilComponent } from './client/perfil/perfil.component';
 import { LoadComponent } from './client/load/load.component';
 import { ServiceComponent } from './client/service/service.component';
+import { AutoComponent } from './client/crud/auto/auto.component';
+import { LoginEmpleadoComponent } from './pages/login-empleado/login-empleado.component';
+import { AdminComponent } from './admin/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ServiceComponent } from './client/service/service.component';
     HistorialComponent,
     PerfilComponent,
     LoadComponent,
-    ServiceComponent
+    ServiceComponent,
+    AutoComponent,
+    LoginEmpleadoComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

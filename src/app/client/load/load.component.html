@@ -26,3 +26,30 @@
 
     </div>
 </header><!-- End Header -->
+
+<main id="main">
+
+
+    <!-- ======= About Section ======= -->
+    <section id="info">
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <img src="assets/gif/gif.gif" alt="load" width="100%">
+                    </div>
+                    <div class="col-sm-5 offset-1">
+                        <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                            <h4 class="title">Servicios activos</h4>
+                            <ul>
+                                <li [hidden]="pago.realizado == 1" *ngFor="let pago of pagos"><h1><strong>{{pago.nombre}}</strong></h1></li>
+                            </ul>
+                            <h1>{{ todayWithPipe }}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End About Section -->
+
+</main><!-- End #main -->

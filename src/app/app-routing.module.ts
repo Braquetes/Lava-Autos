@@ -10,6 +10,9 @@ import { HistorialComponent } from './client/historial/historial.component';
 import { PerfilComponent } from './client/perfil/perfil.component';
 import { LoadComponent } from './client/load/load.component';
 import { ServiceComponent } from './client/service/service.component';
+import { AutoComponent } from './client/crud/auto/auto.component';
+import { LoginEmpleadoComponent } from './pages/login-empleado/login-empleado.component';
+import { AdminComponent } from './admin/admin/admin.component';
 
 const routes: Routes = [
   {
@@ -21,12 +24,21 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
+    path: 'loginEmpleado',
+    component: LoginEmpleadoComponent
+  },
+  {
     path: 'registro',
     component: RegistroComponent
   },
   {
     path: 'welcome',
     component: WelcomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -50,8 +62,18 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'servicio',
+    path: 'servicio/:id',
     component: ServiceComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'crudAuto',
+    component: AutoComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'crudAuto/:id',
+    component: AutoComponent,
     canActivate: [AuthGuard]
   },
   {

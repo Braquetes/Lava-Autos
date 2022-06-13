@@ -12,10 +12,18 @@ export class AuthService {
   constructor(private http: HttpClient) { }
   // URL = 'https://apidazabi.azurewebsites.net/users';
   // URL = 'http://localhost:3000/users';
-  URL = 'http://dazabi.azurewebsites.net';
+  // URL = 'http://dazabi.azurewebsites.net';
+  URL = 'http://127.0.0.1/backendLavaautos/';
+
   login(login: Login): Observable<Request> {
-    return this.http.post<Request>(
-      `${this.URL}/login`, login
+    return this.http.get<Request>(
+      `${this.URL}/auth/login.php?correo=${login.correo}&password=${login.password}`
+    );
+  }
+
+  loginE(login: Login): Observable<Request> {
+    return this.http.get<Request>(
+      `${this.URL}/auth/loginE.php?correo=${login.correo}&password=${login.password}`
     );
   }
 

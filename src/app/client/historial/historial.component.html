@@ -33,21 +33,29 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="row">
-                    <h1>Historial de Reseñas</h1>
+                    <h1>Historial de Autos</h1>
                     <div align="center">
                         <br>
-                        <div class="card" style="width: 15rem;">
+
+                        <div class="card" style="width: 15rem;" *ngFor="let car of auto">
                             <img src="https://static.retail.autofact.cl/blog/c_img_740x370.ea3xf91k2alsmup.jpg"
                                 class="card-img-top" alt="...">
                             <div class="card-body">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <p>Servicio rápido</p>
+                                <p>
+                                   <strong>Modelo: </strong>{{car.modelo}}
+                                </p>
+                                <p>
+                                    <strong>Placa: </strong>{{car.placa}}
+                                </p>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-danger" (click)="eliminar(car.idAuto)">Eliminar</button>
+                                <button type="submit" class="btn btn-warning" (click)="editar(car.idAuto)">Editar</button>
                             </div>
                         </div>
+
+                        <br><hr>
+                        <button class="btn btn-success w-25" type="submit" [routerLink]="['/crudAuto']">Nuevo auto</button>
                     </div>
                 </div>
             </div>

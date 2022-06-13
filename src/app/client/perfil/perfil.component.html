@@ -53,15 +53,15 @@
                 <form (ngSubmit)="update(form)" #form="ngForm" class="col-sm-6">
                     <div class="mb-3">
                         <label class="form-label">Nombre de Usuario</label>
-                        <input type="text" name="usuario" [(ngModel)]="perfil.usuario" class="form-control">
+                        <input type="text" name="usuario" [(ngModel)]="perfil.usuario" class="form-control" disabled>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" name="correo" [(ngModel)]="perfil.correo">
+                        <input type="email" class="form-control" name="correo" [(ngModel)]="perfil.correo" disabled>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Contraseña</label>
-                        <input type="password" name="contraseña" [(ngModel)]="perfil.pass" class="form-control">
+                        <input type="password" name="contraseña" [(ngModel)]="perfil.pass" class="form-control" disabled>
                     </div>
                     <!-- <div class="mb-3">
                         <label class="form-label"></label>

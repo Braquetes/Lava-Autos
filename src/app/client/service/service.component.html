@@ -26,3 +26,61 @@
 
     </div>
 </header><!-- End Header -->
+
+<div class="container">
+    <div class="p-5 col-6 offset-3" align="center">
+        <div class="card ">
+            <div class="card-header text-center">
+                <h3 class="fw-bold">Comprar servicio</h3>
+            </div>
+            <div class="card-body">
+                <form autocomplete="off" [formGroup]="miFormulario">
+                    <div class="mb-3 row justify-content-md-center" align="center">
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Servicio</label>
+                            <input type="text" class="form-control"
+                                value="{{servicio.nombre}}" disabled>
+                            <span *ngIf="campoValido('nombre')" class="form-text text-danger">
+                                Campo obligatorio</span>
+                            <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Cliente:</label>
+                            <input type="text" class="form-control" formControlName="idCliente"
+                                placeholder="Ingrese su nombre de usuario" hidden>
+                                <input type="text" class="form-control" value="{{client.nombre}}" disabled>
+                            <span *ngIf="campoValido('idCliente')" class="form-text text-danger">
+                                Campo obligatorio</span>
+                            <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Auto:</label>
+                            <select class="form-control" formControlName="idAuto">
+                                <option *ngFor="let car of auto" [value]="car.idAuto">{{car.modelo}}</option>
+                            </select>
+                            <span *ngIf="campoValido('idAuto')" class="form-text text-danger">
+                                Campo obligatorio</span>
+                            <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control" formControlName="idServicio"
+                                placeholder="Servicio" hidden>
+                            <span *ngIf="campoValido('idServicio')" class="form-text text-danger">
+                                Campo obligatorio</span>
+                            <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row text-center">
+                        <div class="col">
+                            <button type="submit" [disabled]="miFormulario.invalid" class="btn  btn-primary btn-lg"
+                                (click)="save()">
+                                Guardar
+                            </button>
+                        </div>
+                    </div>  
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
