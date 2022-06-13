@@ -52,7 +52,13 @@ export class CrudService {
     );
   }
 
-  createServicio(form: any) {
+  getServicioId(id: any) {
+    return this.http.get(
+      `${this.URL}/client/crudServicio/getServicio.php?id=${id}`
+    );
+  }
+
+  createPago(form: any) {
     return this.http.post<Request>(
       `${this.URL}client/pago/createPago.php`, form
     );
@@ -67,6 +73,54 @@ export class CrudService {
   getPagoId(id: any) {
     return this.http.get(
       `${this.URL}client/pago/getPagoID.php?id=${id}`
+    );
+  }
+
+  getClientes() {
+    return this.http.get(
+      `${this.URL}/client/crudClients/getClientes.php`
+    );
+  }
+
+  getEmpleados() {
+    return this.http.get(
+      `${this.URL}/client/crudEmpleados/getEmpleados.php`
+    );
+  }
+
+  getPagos() {
+    return this.http.get(
+      `${this.URL}client/pago/getPagos.php`
+    );
+  }
+
+  getAutos() {
+    return this.http.get(
+      `${this.URL}/client/crudAutos/getAutos.php`
+    );
+  }
+
+  createServicio(form: any) {
+    return this.http.post<Request>(
+      `${this.URL}/client/crudServicio/createServicio.php`, form
+    );
+  }
+
+  updateServicio(id: any, form: any) {
+    return this.http.post<Request>(
+      `${this.URL}client/crudServicio/updateServicio.php?id=${id}`, form
+    );
+  }
+
+  deleteServicio(id: any) {
+    return this.http.get(
+      `${this.URL}client/crudServicio/deleteServicio.php?id=${id}`
+    );
+  }
+
+  updateFinish(id: any) {
+    return this.http.get(
+      `${this.URL}client/pago/updateFinish.php?id=${id}`
     );
   }
 

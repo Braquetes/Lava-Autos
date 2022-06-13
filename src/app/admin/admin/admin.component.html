@@ -1,0 +1,146 @@
+<header id="header" class="d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <div class="logo">
+      <h1><a><span>Lava Autos</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active">Inicio</a></li>
+        <li><a class="nav-link scrollto" [routerLink]="['/crudServicio']">Servicios</a></li>
+        <li><a class="nav-link scrollto" [routerLink]="['/trabajos']">Trabajos</a></li>
+        <li><a class="nav-link scrollto">{{usuario}}</a></li>
+        <!-- <li class="nav-item">
+                    <button class="colorbutton1" [routerLink]="['/login']">Iniciar</button>
+                </li>
+                <li class="nav-item">
+                    <button class="colorbutton2" [routerLink]="['/registro']">Registrarse</button>
+                </li> -->
+      </ul>
+      <a class="btn btn-salir" (click)="salir()"><i class="fas fa-sign-out-alt"></i></a>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
+<div class="container-fluid">
+  <div class="col-12">
+    <div class="row">
+      <div class="col-12 p-5">
+        <h1>Clientes</h1>
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cls of clientes">
+              <th scope="row">{{cls.idCliente}}</th>
+              <td>{{cls.nombre}}</td>
+              <td>{{cls.correo}}</td>
+              <td>********</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 p-5">
+        <h1>Autos</h1>
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Modelo</th>
+              <th scope="col">Placa</th>
+              <th scope="col">ID Cliente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ats of autos">
+              <th scope="row">{{ats.idAuto}}</th>
+              <td>{{ats.modelo}}</td>
+              <td>{{ats.placa}}</td>
+              <td>{{ats.idCliente}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 p-5">
+        <h1>Pagos</h1>
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Servicio</th>
+              <th scope="col">ID Cliente</th>
+              <th scope="col">ID Auto</th>
+              <th scope="col">Finalizado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pgs of pagos">
+              <th scope="row">{{pgs.idPago}}</th>
+              <td>{{pgs.nombre}}</td>
+              <td>{{pgs.idClient}}</td>
+              <td>{{pgs.idAuto}}</td>
+              <td *ngIf="pgs.realizado == 1">Si</td>
+              <td *ngIf="pgs.realizado == 0">No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 p-5">
+        <h1>Empleados</h1>
+        <table class="table">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let emps of empleados">
+              <th scope="row">{{emps.idEmpleado}}</th>
+              <td>{{emps.nombre}}</td>
+              <td>{{emps.correo}}</td>
+              <td>********</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 p-5">
+        <h1>Servicios</h1>
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Opciones</th>
+                  </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let serv of servicios">
+                <th scope="row">{{serv.idServicio}}</th>
+                <td>{{serv.nombre}}</td>
+                <td>{{serv.precio}}</td>
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="editar(serv.idServicio)"><i class="fas fa-pen-to-square"></i></button>
+                  <span>.....</span>
+                  <button type="button" class="btn btn-warning" (click)="eliminar(serv.idServicio)"><i class="fas fa-trash-can"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    </div>
+  </div>
+</div>

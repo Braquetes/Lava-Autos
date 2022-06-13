@@ -17,6 +17,8 @@ import { ServiceComponent } from './client/service/service.component';
 import { AutoComponent } from './client/crud/auto/auto.component';
 import { LoginEmpleadoComponent } from './pages/login-empleado/login-empleado.component';
 import { AdminComponent } from './admin/admin/admin.component';
+import { CrudServicioComponent } from './admin/crud-servicio/crud-servicio.component';
+import { TrabajosComponent } from './admin/trabajos/trabajos.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AdminComponent } from './admin/admin/admin.component';
     ServiceComponent,
     AutoComponent,
     LoginEmpleadoComponent,
-    AdminComponent
+    AdminComponent,
+    CrudServicioComponent,
+    TrabajosComponent
   ],
   imports: [
     BrowserModule,

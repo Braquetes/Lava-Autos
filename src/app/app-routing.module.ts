@@ -13,6 +13,8 @@ import { ServiceComponent } from './client/service/service.component';
 import { AutoComponent } from './client/crud/auto/auto.component';
 import { LoginEmpleadoComponent } from './pages/login-empleado/login-empleado.component';
 import { AdminComponent } from './admin/admin/admin.component';
+import { CrudServicioComponent } from './admin/crud-servicio/crud-servicio.component';
+import { TrabajosComponent } from './admin/trabajos/trabajos.component';
 
 const routes: Routes = [
   {
@@ -74,6 +76,21 @@ const routes: Routes = [
   {
     path: 'crudAuto/:id',
     component: AutoComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'crudServicio',
+    component: CrudServicioComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'crudServicio/:id',
+    component: CrudServicioComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'trabajos',
+    component: TrabajosComponent,
     canActivate: [AuthGuard]
   },
   {

@@ -74,7 +74,7 @@ export class ServiceComponent implements OnInit {
   
     save(){
       console.log(this.miFormulario.value);
-      this.CrudS.createServicio(this.miFormulario.value).subscribe((data: any) => {
+      this.CrudS.createPago(this.miFormulario.value).subscribe((data: any) => {
         if(data.resultado == 'OK'){
           console.log(data);
           this.router.navigate(['/load']);
